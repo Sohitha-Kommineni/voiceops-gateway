@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #f8fafc;
+  background: #07090d;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% -10%, rgba(34, 211, 238, 0.12), transparent 32%),
+    radial-gradient(circle at 78% 0%, rgba(45, 212, 191, 0.08), transparent 34%),
+    linear-gradient(180deg, #07090d 0%, #0a0d12 52%, #07090d 100%);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan;
+}
+
+.glass-panel {
+  @apply border border-line bg-card/85 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur;
+}
+
+.section-title {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] text-steel;
+}
+
+.ops-card {
+  @apply border border-line bg-card/90 shadow-[0_18px_48px_rgba(0,0,0,0.22)];
+}
+
+.ops-gradient {
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent);
+}
+
+.scroll-dark {
+  scrollbar-color: #475569 #111827;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+  color: #f8fafc;
+}

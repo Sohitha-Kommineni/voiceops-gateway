@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-label="VoiceOps Gateway architecture diagram">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1b7f72"/>
+    </marker>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0d1712" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="900" fill="#edf3ee"/>
+  <text x="70" y="78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="42" font-weight="800" fill="#0d1712">VoiceOps Gateway Architecture</text>
+  <text x="72" y="116" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" fill="#40566b">Browser microphone audio flows through a secure FastAPI gateway into realtime AI and observability services.</text>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#0d1712">
+    <g transform="translate(70 190)" filter="url(#soft)">
+      <rect width="260" height="120" rx="14" fill="#fff" stroke="#cbdad1"/>
+      <text x="26" y="48">Browser App</text>
+      <text x="26" y="82" font-size="14" font-weight="500" fill="#40566b">React, Web Audio API</text>
+    </g>
+    <g transform="translate(70 390)" filter="url(#soft)">
+      <rect width="260" height="120" rx="14" fill="#fff" stroke="#cbdad1"/>
+      <text x="26" y="48">AudioWorklet</text>
+      <text x="26" y="82" font-size="14" font-weight="500" fill="#40566b">PCM16 frames, RMS meter</text>
+    </g>
+    <g transform="translate(470 295)" filter="url(#soft)">
+      <rect width="300" height="140" rx="14" fill="#0d1712" stroke="#2b5747"/>
+      <text x="28" y="55" fill="#f8fff9">FastAPI WS Gateway</text>
+      <text x="28" y="92" font-size="14" font-weight="500" fill="#bfe6d4">Validation, state machine, relay</text>
+    </g>
+    <g transform="translate(920 170)" filter="url(#soft)">
+      <rect width="280" height="110" rx="14" fill="#fff" stroke="#cbdad1"/>
+      <text x="24" y="46">OpenAI Realtime WS</text>
+      <text x="24" y="78" font-size="14" font-weight="500" fill="#40566b">Server-side provider socket</text>
+    </g>
+    <g transform="translate(920 330)" filter="url(#soft)">
+      <rect width="280" height="110" rx="14" fill="#fff" stroke="#cbdad1"/>
+      <text x="24" y="46">Session Manager</text>
+      <text x="24" y="78" font-size="14" font-weight="500" fill="#40566b">Redis live state, timeouts</text>
+    </g>
+    <g transform="translate(920 490)" filter="url(#soft)">
+      <rect width="280" height="110" rx="14" fill="#fff" stroke="#cbdad1"/>
+      <text x="24" y="46">PostgreSQL</text>
+      <text x="24" y="78" font-size="14" font-weight="500" fill="#40566b">Sessions, events, metrics</text>
+    </g>
+    <g transform="translate(470 610)" filter="url(#soft)">
+      <rect width="300" height="120" rx="14" fill="#fff" stroke="#cbdad1"/>
+      <text x="28" y="50">Metrics Collector</text>
+      <text x="28" y="84" font-size="14" font-weight="500" fill="#40566b">Prometheus-ready latency</text>
+    </g>
+    <g transform="translate(920 670)" filter="url(#soft)">
+      <rect width="280" height="110" rx="14" fill="#fff" stroke="#cbdad1"/>
+      <text x="24" y="46">Prometheus + Grafana</text>
+      <text x="24" y="78" font-size="14" font-weight="500" fill="#40566b">Dashboards and alerts</text>
+    </g>
+  </g>
+  <g fill="none" stroke="#1b7f72" stroke-width="4" marker-end="url(#arrow)">
+    <path d="M200 310 L200 390"/>
+    <path d="M330 450 C390 450 400 365 470 365"/>
+    <path d="M770 335 C840 320 850 225 920 225"/>
+    <path d="M770 365 C840 365 850 385 920 385"/>
+    <path d="M770 395 C840 420 850 545 920 545"/>
+    <path d="M620 435 L620 610"/>
+    <path d="M770 670 C850 670 860 725 920 725"/>
+  </g>
+  <g transform="translate(72 792)">
+    <rect width="1220" height="52" rx="12" fill="#fff" stroke="#cbdad1"/>
+    <text x="24" y="34" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#40566b">Event flow:</text>
+    <text x="118" y="34" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#40566b">mic frame -> gateway validation -> provider relay -> normalized VoiceOps event -> dashboard timeline -> Prometheus metric</text>
+  </g>
+</svg>
