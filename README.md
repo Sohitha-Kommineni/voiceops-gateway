@@ -168,7 +168,6 @@ Structured JSON logs include request IDs, session IDs, event types, providers, a
 - Tune max audio chunk size, max session duration, and stale-session timeout.
 - Add per-tenant rate limits and audit logging.
 
-## Resume Bullet Examples
+## License
 
-- Built a production-style realtime voice AI gateway with FastAPI WebSockets, React, AudioWorklets, PostgreSQL, Redis, Prometheus, and OpenAI Realtime integration.
-- Implemented typed event protocols, session state machines, latency metrics, provider abstraction, mock realtime mode, and barge-in handling for browser-based voice agents.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
