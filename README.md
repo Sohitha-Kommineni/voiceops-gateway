@@ -170,4 +170,4 @@ Structured JSON logs include request IDs, session IDs, event types, providers, a
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
+This project is open source under the MIT License. Feel free to use, modify, and adapt it for your own projects.
